@@ -27,3 +27,17 @@ dependencies {
 test {
     useJUnitPlatform()
 }
+
+tasks.register('api', Test) {
+    useJUnitPlatform() {
+        includeTags 'api'
+        excludeTags 'defect'
+    }
+}
+
+tasks.register('ui', Test) {
+    useJUnitPlatform() {
+        includeTags 'ui'
+        excludeTags 'defect'
+    }
+}
